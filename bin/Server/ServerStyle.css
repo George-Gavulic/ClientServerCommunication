@@ -1,0 +1,10 @@
+#mainLabel {
+    -fx-font-size: 20px;
+    -fx-text-fill: blue;
+}
+
+Button {
+    -fx-background-color: #0f27c0;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
