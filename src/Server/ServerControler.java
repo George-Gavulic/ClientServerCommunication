@@ -11,6 +11,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 
 public class ServerControler {    
@@ -26,6 +28,15 @@ public class ServerControler {
 
     @FXML
     private Label IdleLable;
+
+    @FXML
+    private ImageView ServerBackground;
+
+    @FXML
+    private void initialize() {
+        Image image = new Image(getClass().getResourceAsStream("serverImage2.png"));
+        ServerBackground.setImage(image);
+    }
 
     @FXML
     public void StartScreen() {

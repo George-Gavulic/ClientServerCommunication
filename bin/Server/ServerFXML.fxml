@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="512.0" prefWidth="512.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Server.ServerControler">
     <children>
-      <ImageView fitHeight="512.0" fitWidth="512.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ServerBackground" fitHeight="512.0" fitWidth="512.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../Pictures/Screenshots/serverImage2.png" />
          </image>

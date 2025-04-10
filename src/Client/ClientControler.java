@@ -32,10 +32,25 @@ public class ClientControler {
     private Rectangle ReturnedAreaBlocker, RadiusBlock, BottonScreenBlocker, RadiusInputBlocker;
 
     @FXML
-    private ImageView LaptopImage;
+    private ImageView LaptopImage, ClientWorkSpaceImage;
 
     @FXML
-    public void initialize() {  
+    public void initialize() { 
+        //add the image
+        try {
+            Image bgImage = new Image(getClass().getResourceAsStream("ClientImage1.png"));
+        Image laptopImage = new Image(getClass().getResourceAsStream("googleImage1.png"));
+
+        ClientWorkSpaceImage.setImage(bgImage);
+        LaptopImage.setImage(laptopImage);
+            
+        } catch (Exception e) {
+            System.err.println(e);
+            // TODO: handle exception
+        }
+        
+        System.out.println("Client Controler Initialized");
+        
         //hide everything for page 2
         SendRadiusButton.setVisible(false);  // Hide button
         SendRadiusButton.setDisable(true);   // Disable button
