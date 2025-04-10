@@ -7,4 +7,33 @@ Button {
     -fx-background-color: #0f27c0;
     -fx-text-fill: white;
     -fx-font-size: 14px;
+    -fx-cursor: hand;
+
 }
+
+/* #serverLog{
+    -fx-font-family: "Times New Roman";
+    /* -fx-font-family: "Times New Roman", Times, serif; 
+}*/
+#ScrollPlane{
+    -fx-background-color: #2E2B27;
+}
+
+#InnerScrollPlane{
+    -fx-background-color: #2E2B27;
+}
+
+#serverLog{
+    -fx-control-inner-background: #0000AA; /* Classic BIOS blue */
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 12px;
+    -fx-text-fill: #FFFFFF; /* White text */
+    -fx-border-color: #FFFFFF; /* Thin white border */
+    -fx-border-width: 1px;
+    -fx-border-radius: 2px;
+    -fx-highlight-fill: #FFFFFF;
+    -fx-highlight-text-fill: #000000;
+    -fx-background-insets: 0;
+    -fx-padding: 5px;
+}
+

@@ -4,7 +4,27 @@
 }
 
 Button {
+    -fx-cursor: hand;
+}
+
+#SendRadiusButton {
     -fx-background-color: #4CAF50;
     -fx-text-fill: white;
     -fx-font-size: 14px;
+    -fx-padding: 0px 5px;
+    -fx-border-radius: 5px;
+    
+}
+
+#SendRadiusButton:hover {
+    -fx-background-color: #3e8e41;
+}
+
+#SendRadiusButton:pressed {
+    -fx-background-color: #2d662f;
+}
+
+#SendRadiusButton:disabled {
+    -fx-background-color: #ccc;
+    -fx-text-fill: #999;
 }
