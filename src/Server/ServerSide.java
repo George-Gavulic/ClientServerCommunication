@@ -5,12 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.HBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class ServerSide extends Application {
-
     
     @Override
     public void start(Stage primaryStage) {
@@ -35,9 +33,6 @@ public class ServerSide extends Application {
             primaryStage.setTitle("Server"); //tittle left of the minimize button
 
             primaryStage.show(); // lets see it
-
-            //ServerControler serverControler = new ServerControler();
-            //serverControler.StartServer();
         } catch (Exception e) {
             e.printStackTrace();
         }

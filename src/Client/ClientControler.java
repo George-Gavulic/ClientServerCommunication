@@ -112,6 +112,11 @@ public class ClientControler {
 
         // Create an output stream to send data to the server
         toServer = new DataOutputStream(socket.getOutputStream());
+        
+        //toServer.writeUTF("Hello Server");
+
+
+
      }  catch (IOException ex) {
         // Handle any errors that occur
      }
@@ -121,16 +126,45 @@ public class ClientControler {
         // Send the radius to the server
         toServer.writeDouble(radius);
         toServer.flush();
+        
 
         // Get area from the server
-        double area =  fromServer.readDouble();
+        double area = 0;
+        System.out.println(area + "a");
+        area =  fromServer.readDouble();
+        System.out.println(area+ "b");
         ReturnedAreaLable.setText("" +area);
     }
 
-    public void ReachOutToServer() {
-        OpenSocket();
+    public void ReachOutToServer() throws IOException {
+        
+        OpenSocket();   
+        try { //see if the server accepted the connection
+
+            Long hello = null;
+
+            //wait for server to send back connection confirmation
+            
+            hello = fromServer.readLong();
+
+            
+        } catch (Exception e) {
+            System.out.println("could not find server!!!!");
+        }
         SwitchScene();
 
+        // Long hello = null;
+
+        // //wait for server to send back connection confirmation
+        
+        // hello = fromServer.readLong();
+        
+        
+        // if (hello == null){
+        //     
+
+        // }
+    
     }
 
 

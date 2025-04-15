@@ -3,7 +3,6 @@ package Server;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.*;
 import java.net.*;
 
 import javafx.application.Platform;
@@ -45,9 +44,8 @@ public class ServerControler {
 
         startServer.setVisible(false);
         startServer.setDisable(true);
+    } 
 
-    }
-    
     @FXML
     public void WriteMessageToServer(String message) {
         serverLog.appendText("\n" + message);
@@ -56,6 +54,8 @@ public class ServerControler {
     public void StartServer() {
         StartScreen();
         WriteMessageToServer("Starting Server");
+
+        //double area;
 
         new Thread(() -> { // Run server on a separate thread
             try {
@@ -71,13 +71,16 @@ public class ServerControler {
                 DataInputStream inputFromClient = new DataInputStream(socket.getInputStream());
                 DataOutputStream outputToClient = new DataOutputStream(socket.getOutputStream());
 
+                outputToClient.writeUTF("Hello from Server!");
+                outputToClient.flush();
+
                 while (true) {
                     double radius = inputFromClient.readDouble();
                     double area = radius * radius * Math.PI;
 
                     outputToClient.writeDouble(area);
                     outputToClient.flush();
-
+                    
                     // Update UI (if needed) safely using Platform.runLater
                     Platform.runLater(() -> {
                         WriteMessageToServer("Received radius: " + radius);
